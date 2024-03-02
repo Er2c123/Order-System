@@ -21,14 +21,7 @@ public class Store {
     public Item searchItem(String name) {
         return items.search(name.toLowerCase());
     }
-    public void removeItem(String itemName) {
-        if (items.delete(itemName.toLowerCase())) {
-            itemList.removeIf(item -> item.getName().equalsIgnoreCase(itemName));
-            System.out.println(itemName + " removed from the store.");
-        } else {
-            System.out.println("Failed to remove " + itemName + ". Item might not exist.");
-        }
-    }
+
 
     public void checkPromotion(String itemName, double priceThreshold) {
         Item chosenItem = searchItem(itemName.toLowerCase());
